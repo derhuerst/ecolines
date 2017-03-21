@@ -24,7 +24,7 @@ fetchRoutes()
 			if (!stations[s.id]) stations[s.id] = {
 				id: s.id,
 				name: s.title,
-				description: s.description,
+				description: s.description || '',
 				coordinates: {
 					latitude: parseFloat(s.location.latitude),
 					longitude: parseFloat(s.location.longitude)
