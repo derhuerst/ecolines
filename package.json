@@ -14,6 +14,7 @@
 	"dependencies": {
 	},
 	"devDependencies": {
+		"is-roughly-equal": "^0.1.0",
 		"got": "^6.7.1",
 		"tape": "^4.6.3",
 		"tap-min": "^1.2.0"
