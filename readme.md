@@ -7,6 +7,10 @@
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/ecolines.svg)
 [![chat on gitter](https://badges.gitter.im/derhuerst.svg)](https://gitter.im/derhuerst)
 
+Things still missing:
+
+- [routes](https://github.com/public-transport/friendly-public-transport-format/blob/master/docs/readme.md#route), [schedules](https://github.com/public-transport/friendly-public-transport-format/blob/master/docs/readme.md#schedule) from [this gist](https://gist.github.com/derhuerst/c76db8e9216b686b0262857cc9abd16e)
+
 
 ## Installing
 
@@ -17,8 +21,24 @@ npm install ecolines
 
 ## Usage
 
+The [npm package](https://npmjs.com/ecolines) contains data in the [*Friendly Public Transport Format*](https://github.com/public-transport/friendly-public-transport-format).
+
 ```js
-todo
+const stations = require('ecolines')
+
+console.log(stations['211'])
+```
+
+```js
+{
+	id: '211',
+	name: 'Berlin',
+	description: 'ZOB "Am Funkturm", Masurenallee',
+	coordinates: {
+		latitude: 52.50728190225904,
+		longitude: 13.280174732208252
+	}
+}
 ```
 
 
