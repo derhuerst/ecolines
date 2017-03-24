@@ -35,6 +35,7 @@ console.log(stations['211'])
 	id: '211',
 	name: 'Berlin',
 	description: 'ZOB "Am Funkturm", Masurenallee',
+	country: 'DE', // ISO 3166-1 alpha-2
 	coordinates: {
 		latitude: 52.50728190225904,
 		longitude: 13.280174732208252

@@ -4,6 +4,12 @@ const fs = require('fs')
 const path = require('path')
 
 const fetchRoutes = require('./fetch-routes')
+const fetchCountries = require('./fetch-countries')
+
+const showError = (err) => {
+	console.error(err)
+	process.exit(1)
+}
 
 const writeJSON = (file, data) =>
 	new Promise((yay, nay) => {
@@ -33,6 +39,24 @@ fetchRoutes()
 		}
 	}
 
-	return writeJSON('stations.json', stations)
+	return fetchCountries()
 })
-// .then(console.log)
+.then((countries) => {
+	for (let country of countries) {
+		if (!country.iso) {
+			console.error(country.title + ` doesn't have an ISO code`)
+			continue
+		}
+
+		for (let station of country.stop) {
+			if (!stations[station.id]) {
+				console.error(`station ${station.id} does not exist`)
+				continue
+			}
+
+			stations[station.id].country = country.iso
+		}
+	}
+})
+.then(() => writeJSON('stations.json', stations))
+.catch(showError)
