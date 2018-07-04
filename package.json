@@ -1,23 +1,32 @@
 {
-	"name":         "ecolines",
-	"description":  "JavaScript client for the Ecolines API.",
-	"version":      "0.2.0",
-	"main":         "stations.json",
-	"files":        ["stations.json"],
-	"keywords":     ["bus", "coach", "ecolines", "europe", "api"],
-	"author":       "Jannis R <mail@jannisr.de>",
-	"homepage":     "https://github.com/derhuerst/ecolines",
-	"repository":   "derhuerst/ecolines",
-	"bugs":         "https://github.com/derhuerst/ecolines/issues",
-	"license":      "ISC",
-	"engines":      {"node": ">=6"},
-	"dependencies": {
+	"name": "ecolines",
+	"description": "JavaScript client for the Ecolines API.",
+	"version": "0.2.0",
+	"main": "stations.json",
+	"files": [
+		"stations.json"
+	],
+	"keywords": [
+		"bus",
+		"coach",
+		"ecolines",
+		"europe",
+		"api"
+	],
+	"author": "Jannis R <mail@jannisr.de>",
+	"homepage": "https://github.com/derhuerst/ecolines",
+	"repository": "derhuerst/ecolines",
+	"bugs": "https://github.com/derhuerst/ecolines/issues",
+	"license": "ISC",
+	"engines": {
+		"node": ">=6"
 	},
+	"dependencies": {},
 	"devDependencies": {
+		"got": "^8.3.2",
 		"is-roughly-equal": "^0.1.0",
-		"got": "^6.7.1",
-		"tape": "^4.6.3",
-		"tap-min": "^1.2.0"
+		"tap-min": "^1.2.0",
+		"tape": "^4.6.3"
 	},
 	"scripts": {
 		"build": "node build/index.js",
