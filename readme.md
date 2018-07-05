@@ -12,37 +12,22 @@ Things still missing:
 - [routes](https://github.com/public-transport/friendly-public-transport-format/blob/master/docs/readme.md#route), [schedules](https://github.com/public-transport/friendly-public-transport-format/blob/master/docs/readme.md#schedule) from [this gist](https://gist.github.com/derhuerst/c76db8e9216b686b0262857cc9abd16e)
 - stations by countries, from [here](https://ecolines.net/international/en/trip/bus-stops)
 
-
 ## Installing
 
 ```shell
 npm install ecolines
 ```
 
-
 ## Usage
 
-The [npm package](https://npmjs.com/ecolines) contains data in the [*Friendly Public Transport Format*](https://github.com/public-transport/friendly-public-transport-format).
-
 ```js
-const stations = require('ecolines')
-
-console.log(stations['211'])
+const ecolines = require('ecolines')
 ```
 
-```js
-{
-	id: '211',
-	name: 'Berlin',
-	description: 'ZOB "Am Funkturm", Masurenallee',
-	country: 'DE', // ISO 3166-1 alpha-2
-	coordinates: {
-		latitude: 52.50728190225904,
-		longitude: 13.280174732208252
-	}
-}
-```
+This package contains data in the [*Friendly Public Transport Format*](https://github.com/public-transport/friendly-public-transport-format) and provides the following methods:
 
+- [`stations()`](docs/stations.md) to get a list of operated stations, such as `Riga (bus station)`, `Berlin` or `Warsaw 01 (Zachodnia)`.
+- [`regions()`](docs/regions.md) to get a list of all operated regions (cities) such as `Riga`, `Berlin` or `Warsaw`.
 
 ## Contributing
 
