@@ -23,7 +23,7 @@
 	"bugs": "https://github.com/derhuerst/ecolines/issues",
 	"license": "ISC",
 	"engines": {
-		"node": ">=6"
+		"node": ">=8"
 	},
 	"dependencies": {
 		"@mapbox/timespace": "^2.0.4",
