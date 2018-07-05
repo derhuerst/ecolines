@@ -20,8 +20,8 @@ test('ecolines.stations', async (t) => {
 		t.ok(countries.whereAlpha2(station.location.country))
 	}
 
-	const stationsWithGeolocation = stations.filter(s => !!s.location.longitude)
-	t.ok(stationsWithGeolocation.length > 100)
+	const stationsWithoutGeolocation = stations.filter(s => !s.location.longitude)
+	t.ok(stationsWithoutGeolocation.length === 0)
 
 	const stationsWithDescription = stations.filter(s => !!s.description)
 	t.ok(stationsWithDescription.length > 20)
