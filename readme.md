@@ -31,6 +31,7 @@ This package contains data in the [*Friendly Public Transport Format*](https://g
 - [`regions()`](docs/regions.md) to get a list of all operated regions (cities) such as `Riga`, `Berlin` or `Warsaw`.
 - [`stopovers(station, opt = {})`](docs/stopovers.md) to get a list of stopovers (departures / arrivals) at a given station (at a given date).
 - [`journeys(origin, destination, opt = {})`](docs/journeys.md) to get a list of journeys between given origin and destination.
+- [`legDetails(legId)`](docs/legDetails.md) to get details (such as stopovers) for a given journey leg discovered using the `journeys` method.
 - [`currencies()`](docs/currencies.md) to get a list of supported [ISO-4217](https://en.wikipedia.org/wiki/ISO_4217) currency codes such as `EUR` or `PLN`.
 
 ## Contributing

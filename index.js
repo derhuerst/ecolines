@@ -5,5 +5,6 @@ const regions = require('./lib/regions')
 const stopovers = require('./lib/stopovers')
 const currencies = require('./lib/currencies').currencies
 const journeys = require('./lib/journeys')
+const legDetails = require('./lib/legDetails')
 
-module.exports = {stations, regions, stopovers, currencies, journeys}
+module.exports = {stations, regions, stopovers, currencies, journeys, legDetails}

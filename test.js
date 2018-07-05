@@ -144,3 +144,38 @@ test('ecolines.journeys', async (t) => {
 
 	t.end()
 })
+
+test('ecolines.legDetails', async (t) => {
+	const berlin = '211'
+	const riga = '1'
+	const date = moment.tz('Europe/Riga').add(5, 'days').startOf('day').toDate()
+	const journeys = await ecolines.journeys(berlin, riga, {when: date})
+
+	t.ok(journeys.length > 0, 'precondition')
+	const leg = journeys[0].legs[0]
+	t.ok(leg, 'precondition')
+	t.ok(leg.id, 'precondition')
+
+	const detailedLeg = await ecolines.legDetails(leg.id)
+
+	t.ok(detailedLeg)
+	validate(detailedLeg)
+
+	t.ok(detailedLeg.origin.id === berlin)
+	t.ok(detailedLeg.stopovers[0].stop.id === berlin)
+
+	validate(detailedLeg.line)
+	t.ok(detailedLeg.line.operator === 'ecolines')
+	t.ok(detailedLeg.line.mode === 'bus')
+	t.ok(detailedLeg.line.public)
+
+	t.ok(detailedLeg.stopovers.length >= 2)
+	for (let stopover of detailedLeg.stopovers) {
+		validate(stopover)
+		t.ok(stopover.stop.location.address)
+	}
+
+	t.ok(detailedLeg.busPhone)
+
+	t.end()
+})
