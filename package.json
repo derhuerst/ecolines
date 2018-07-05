@@ -15,6 +15,9 @@
 		"api"
 	],
 	"author": "Jannis R <mail@jannisr.de>",
+	"contributors": [
+		"Julius Tens <mail@juliustens.eu>"
+	],
 	"homepage": "https://github.com/derhuerst/ecolines",
 	"repository": "derhuerst/ecolines",
 	"bugs": "https://github.com/derhuerst/ecolines/issues",
