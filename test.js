@@ -5,6 +5,7 @@ const countries = require('iso-3166-1')
 const validate = require('validate-fptf')
 const moment = require('moment-timezone')
 const uniqBy = require('lodash.uniqby')
+const isCurrency = require('is-currency-code')
 
 const ecolines = require('.')
 
@@ -94,5 +95,14 @@ test('ecolines.stopovers', async (t) => {
 	const stopoversToRiga = stopovers.filter(s => s.destination.id === '1')
 	t.ok(stopoversToRiga.length >= 2)
 
+	t.end()
+})
+
+test('ecolines.currencies', async (t) => {
+	const currencies = await ecolines.currencies()
+	t.ok(currencies.length >= 4)
+	for (let currency of currencies) t.ok(isCurrency(currency))
+	t.ok(currencies.includes('EUR'))
+	t.ok(currencies.includes('PLN'))
 	t.end()
 })

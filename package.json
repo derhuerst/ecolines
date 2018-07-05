@@ -38,6 +38,7 @@
 		"p-memoize": "^2.0.0"
 	},
 	"devDependencies": {
+		"is-currency-code": "^1.2.0",
 		"iso-3166-1": "^1.1.0",
 		"lodash.uniqby": "^4.7.0",
 		"tap-min": "^1.2.0",
