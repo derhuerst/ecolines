@@ -31,7 +31,6 @@
 		"got": "^8.3.2",
 		"lodash.groupby": "^4.6.0",
 		"lodash.isdate": "^4.0.1",
-		"lodash.isobject": "^3.0.2",
 		"lodash.isstring": "^4.0.1",
 		"lodash.merge": "^4.6.1",
 		"lodash.sortby": "^4.7.0",
