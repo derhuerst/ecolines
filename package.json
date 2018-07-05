@@ -26,7 +26,6 @@
 		"got": "^8.3.2"
 	},
 	"devDependencies": {
-		"is-roughly-equal": "^0.1.0",
 		"iso-3166-1": "^1.1.0",
 		"tap-min": "^1.2.0",
 		"tape": "^4.6.3",

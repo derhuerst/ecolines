@@ -1,7 +1,6 @@
 'use strict'
 
 const test = require('tape')
-const isRoughlyEqual = require('is-roughly-equal')
 const countries = require('iso-3166-1')
 const validate = require('validate-fptf')
 
