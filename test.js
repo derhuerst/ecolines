@@ -2,33 +2,49 @@
 
 const test = require('tape')
 const isRoughlyEqual = require('is-roughly-equal')
+const countries = require('iso-3166-1')
+const validate = require('validate-fptf')
 
-const stations = require('.')
+const ecolines = require('.')
 
+test('ecolines.stations', async (t) => {
+	const stations = await ecolines.stations()
 
+	t.ok(stations.length > 100)
+	for (let station of stations) {
+		validate(station)
+		// regions
+		t.ok(Array.isArray(station.regions))
+		t.ok(station.regions.length > 0)
+		// location & country
+		validate(station.location)
+		t.ok(countries.whereAlpha2(station.location.country))
+	}
 
-test('stations.json – Berlin', (t) => {
-	t.plan(8)
-	const s = stations['211'] // Berlin ZOB
+	const stationsWithGeolocation = stations.filter(s => !!s.location.longitude)
+	t.ok(stationsWithGeolocation.length > 100)
 
-	t.equal(s.id, '211')
-	t.equal(s.name, 'Berlin')
-	t.ok(s.description)
-	t.equal(s.country, 'DE')
-	t.equal(typeof s.description, 'string')
-	t.ok(s.coordinates)
-	t.ok(isRoughlyEqual(.01, s.coordinates.latitude, 52.5076))
-	t.ok(isRoughlyEqual(.01, s.coordinates.longitude, 13.2775))
+	const stationsWithDescription = stations.filter(s => !!s.description)
+	t.ok(stationsWithDescription.length > 20)
+
+	t.end()
 })
 
-test('stations.json – all', (t) => {
-	for (let id in stations) {
-		const s = stations[id]
-		t.equal(s.id, id, id + ' has an invalid id')
-		t.ok(s.name, id + ' has an invalid name')
-		t.equal(typeof s.description, 'string', id + ' has an invalid description')
-		t.equal(typeof s.country, 'string', id + ' has an invalid country')
-		t.ok(s.coordinates, id + ' has invalid coordinates')
+test('ecolines.regions', async (t) => {
+	const regions = await ecolines.regions()
+
+	t.ok(regions.length > 100)
+	for (let region of regions) {
+		validate(region)
+		// stations
+		t.ok(Array.isArray(region.stations))
+		t.ok(region.stations.length > 0)
+		// country
+		t.ok(countries.whereAlpha2(region.country))
 	}
+
+	const regionsWithMultipleStations = regions.filter(r => r.stations.length > 0)
+	t.ok(regionsWithMultipleStations.length > 1)
+
 	t.end()
 })

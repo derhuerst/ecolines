@@ -4,5 +4,3 @@ node_js:
   - 'stable'
   - '7'
   - '6'
-after_script:
-  - ls -lh stations.json
