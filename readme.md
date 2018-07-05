@@ -1,6 +1,7 @@
 # ecolines
 
-**JavaScript client for the Ecolines API.**
+**JavaScript client for the [Ecolines](https://ecolines.net) API.** Complies with the [friendly public transport format](https://github.com/public-transport/friendly-public-transport-format). Inofficial, using endpoints by *Ecolines*. Ask them for permission before using this module in production.
+
 
 [![npm version](https://img.shields.io/npm/v/ecolines.svg)](https://www.npmjs.com/package/ecolines)
 [![build status](https://img.shields.io/travis/derhuerst/ecolines.svg)](https://travis-ci.org/derhuerst/ecolines)
