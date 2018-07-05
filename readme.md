@@ -11,7 +11,6 @@
 Things still missing:
 
 - [routes](https://github.com/public-transport/friendly-public-transport-format/blob/master/docs/readme.md#route), [schedules](https://github.com/public-transport/friendly-public-transport-format/blob/master/docs/readme.md#schedule) from [this gist](https://gist.github.com/derhuerst/c76db8e9216b686b0262857cc9abd16e)
-- stations by countries, from [here](https://ecolines.net/international/en/trip/bus-stops)
 
 ## Installing
 
