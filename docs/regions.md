@@ -16,20 +16,20 @@ ecolines.regions()
 [
     {
         type: "region",
-        id: "1074",
-        name: "Baunatal",
-        country: "DE",
+        id: "866",
+        name: "Kremenchug",
+        country: "UA",
         stations: [
-            "1074"
+            "866"
         ]
     },
     {
         type: "region",
-        id: "681",
-        name: "Tula",
-        country: "RU",
+        id: "1070",
+        name: "Venlo",
+        country: "NL",
         stations: [
-            "681"
+            "1070"
         ]
     },
     {
@@ -38,10 +38,19 @@ ecolines.regions()
         name: "Warszawa",
         country: "PL",
         stations: [
-            "973",
             "100",
-            "948",
-            "102"
+            "948"
+        ]
+    },
+    {
+        type: "region",
+        id: "7",
+        name: "Kaunas",
+        country: "LT",
+        stations: [
+            "7",
+            "1090",
+            "1039"
         ]
     }
     // …

@@ -3,8 +3,11 @@
 const test = require('tape')
 const countries = require('iso-3166-1')
 const validate = require('validate-fptf')
+const moment = require('moment-timezone')
 
 const ecolines = require('.')
+
+const timezones = moment.tz.names()
 
 test('ecolines.stations', async (t) => {
 	const stations = await ecolines.stations()
@@ -18,10 +21,10 @@ test('ecolines.stations', async (t) => {
 		// location & country
 		validate(station.location)
 		t.ok(countries.whereAlpha2(station.location.country))
-	}
 
-	const stationsWithoutGeolocation = stations.filter(s => !s.location.longitude)
-	t.ok(stationsWithoutGeolocation.length === 0)
+		t.ok(!!station.location.longitude)
+		t.ok(timezones.includes(station.location.timezone))
+	}
 
 	const stationsWithDescription = stations.filter(s => !!s.description)
 	t.ok(stationsWithDescription.length > 20)
