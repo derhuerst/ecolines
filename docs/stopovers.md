@@ -1,6 +1,6 @@
 # `stopovers(station, date = new Date())`
 
-Get a list of stopovers (departures / arrivals) at a given station at a given date. Returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/promise) that will resolve in an array of `station`s in the [*Friendly Public Transport Format*](https://github.com/public-transport/friendly-public-transport-format).
+Get a list of stopovers (departures / arrivals) at a given station at a given date. Returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/promise) that will resolve in an array of `stopover`s in the [*Friendly Public Transport Format*](https://github.com/public-transport/friendly-public-transport-format).
 
 ```js
 const ecolines = require('ecolines')
