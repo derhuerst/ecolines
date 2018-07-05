@@ -33,6 +33,6 @@
 	},
 	"scripts": {
 		"test": "node test.js | tap-min",
-		"prepublish": "npm test"
+		"prepublishOnly": "npm test"
 	}
 }
