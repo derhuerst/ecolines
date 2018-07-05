@@ -6,7 +6,7 @@
 [![npm version](https://img.shields.io/npm/v/ecolines.svg)](https://www.npmjs.com/package/ecolines)
 [![build status](https://img.shields.io/travis/derhuerst/ecolines.svg)](https://travis-ci.org/derhuerst/ecolines)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/ecolines.svg)
-[![chat on gitter](https://badges.gitter.im/derhuerst.svg)](https://gitter.im/derhuerst)
+[![chat on gitter](https://badges.gitter.im/public-transport.svg)](https://gitter.im/public-transport)
 
 Things still missing:
 
