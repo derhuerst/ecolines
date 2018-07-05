@@ -29,7 +29,7 @@ This package contains data in the [*Friendly Public Transport Format*](https://g
 
 - [`stations()`](docs/stations.md) to get a list of operated stations, such as `Riga (bus station)`, `Berlin` or `Warsaw 01 (Zachodnia)`.
 - [`regions()`](docs/regions.md) to get a list of all operated regions (cities) such as `Riga`, `Berlin` or `Warsaw`.
-- [`stopovers(station, date = new Date())`](docs/stopovers.md) to get a list of stopovers (departures / arrivals) at a given station at a given date.
+- [`stopovers(station, opt = {})`](docs/stopovers.md) to get a list of stopovers (departures / arrivals) at a given station (at a given date).
 
 ## Contributing
 

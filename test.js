@@ -55,7 +55,7 @@ test('ecolines.regions', async (t) => {
 test('ecolines.stopovers', async (t) => {
 	const berlin = '211'
 	const date = moment.tz('Europe/Berlin').add(5, 'days').startOf('day').toDate()
-	const stopovers = await ecolines.stopovers(berlin, date)
+	const stopovers = await ecolines.stopovers(berlin, {when: date})
 
 	t.ok(stopovers.length > 4)
 	for (let stopover of stopovers) {

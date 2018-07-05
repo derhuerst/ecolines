@@ -1,6 +1,6 @@
-# `stopovers(station, date = new Date())`
+# `stopovers(station, opt = {})`
 
-Get a list of stopovers (departures / arrivals) at a given station at a given date. Returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/promise) that will resolve in an array of `stopover`s in the [*Friendly Public Transport Format*](https://github.com/public-transport/friendly-public-transport-format).
+Get a list of stopovers (departures / arrivals) at a given station (at a given date). Returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/promise) that will resolve in an array of `stopover`s in the [*Friendly Public Transport Format*](https://github.com/public-transport/friendly-public-transport-format).
 
 ```js
 const ecolines = require('ecolines')
@@ -16,13 +16,19 @@ ecolines.stopovers(berlin)
 .then(console.log)
 .catch(console.error)
 
-ecolines.stopovers(riga, new Date())
+ecolines.stopovers(riga, {when: new Date()})
 .then(console.log)
 .catch(console.error)
 ```
 
-- `station` can be both a station `id` and a station `object`
-- Returns results for the entire calendar day of `date` in the station's timezone.
+- `station` can be both a station `id` and a station `object`.
+- `defaults`, partially overwritten by `opt`, looks like this:
+
+```js
+{
+    when: new Date() // results for the entire calendar day of `when` in the station's timezone will be returned
+}
+```
 
 ## Response
 
