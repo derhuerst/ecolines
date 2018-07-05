@@ -106,3 +106,41 @@ test('ecolines.currencies', async (t) => {
 	t.ok(currencies.includes('PLN'))
 	t.end()
 })
+
+test('ecolines.journeys', async (t) => {
+	const riga = {
+		type: 'station',
+		id: '1'
+	}
+	const berlin = '211'
+	const date = moment.tz('Europe/Riga').add(5, 'days').startOf('day').toDate()
+	const currency = 'PLN'
+
+	const journeys = await ecolines.journeys(riga, berlin, {when: date, adults: 2, currency})
+
+	t.ok(journeys.length >= 4)
+	for (let journey of journeys) {
+		validate(journey)
+		t.ok(journey.price)
+		t.ok(journey.price.currency === currency)
+		t.ok(journey.price.amount > 50)
+
+		t.ok(journey.legs[0].origin.id === riga.id)
+		t.ok(journey.legs[journey.legs.length-1].destination.id === berlin)
+
+		for (let leg of journey.legs) {
+			t.ok(leg.id)
+			t.ok(leg.operator === 'ecolines')
+			t.ok(leg.mode === 'bus')
+			t.ok(leg.public)
+		}
+	}
+
+	const directJourneys = journeys.filter(j => j.legs.length === 1)
+	t.ok(directJourneys.length > 0)
+
+	const indirectJourneys = journeys.filter(j => j.legs.length > 1)
+	t.ok(indirectJourneys.length > 0)
+
+	t.end()
+})
