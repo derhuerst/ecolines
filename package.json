@@ -14,14 +14,16 @@
 		"node": ">=16"
 	},
 	"devDependencies": {
+		"eslint": "^8.22.0",
 		"is-roughly-equal": "^0.1.0",
 		"got": "^11.8.5",
 		"tap-min": "^2.0.0",
 		"tape": "^5.5.3"
 	},
 	"scripts": {
+		"lint": "eslint .",
 		"build": "node build/index.js",
 		"test": "node test.js | tap-min",
-		"prepublish": "npm run build && npm test"
+		"prepublish": "npm run lint && npm run build && npm test"
 	}
 }

@@ -21,7 +21,6 @@ const writeJSON = (file, data) =>
 	})
 
 const stations = {}
-const routes = []
 
 fetchRoutes()
 .then((connections) => {
