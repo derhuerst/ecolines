@@ -5,12 +5,14 @@
 [![npm version](https://img.shields.io/npm/v/ecolines.svg)](https://www.npmjs.com/package/ecolines)
 [![build status](https://img.shields.io/travis/derhuerst/ecolines.svg)](https://travis-ci.org/derhuerst/ecolines)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/ecolines.svg)
-[![chat on gitter](https://badges.gitter.im/derhuerst.svg)](https://gitter.im/derhuerst)
+[![support me via GitHub Sponsors](https://img.shields.io/badge/support%20me-donate-fa7664.svg)](https://github.com/sponsors/derhuerst)
+[![chat with me on Twitter](https://img.shields.io/badge/chat%20with%20me-on%20Twitter-1da1f2.svg)](https://twitter.com/derhuerst)
 
 Things still missing:
 
 - [routes](https://github.com/public-transport/friendly-public-transport-format/blob/master/docs/readme.md#route), [schedules](https://github.com/public-transport/friendly-public-transport-format/blob/master/docs/readme.md#schedule) from [this gist](https://gist.github.com/derhuerst/c76db8e9216b686b0262857cc9abd16e)
 - stations by countries, from [here](https://ecolines.net/international/en/trip/bus-stops)
+- [SMS service integration](https://ecolines.net/de/de/information/sms-service)?
 
 
 ## Installing
