@@ -23,7 +23,7 @@
 	},
 	"devDependencies": {
 		"eslint": "^8.22.0",
-		"got": "^11.8.5",
+		"got": "^12.3.1",
 		"is-roughly-equal": "^0.1.0",
 		"tap-min": "^2.0.0",
 		"tape": "^5.5.3"
