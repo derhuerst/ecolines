@@ -7,7 +7,7 @@ const stations = require('.')
 
 
 
-test('stations.json – Berlin', (t) => {
+test('stations.json – Berlin', (t) => {
 	t.plan(8)
 	const s = stations['211'] // Berlin ZOB
 
@@ -17,11 +17,11 @@ test('stations.json – Berlin', (t) => {
 	t.equal(s.country, 'DE')
 	t.equal(typeof s.description, 'string')
 	t.ok(s.coordinates)
-	t.ok(isRoughlyEqual(.01, s.coordinates.latitude, 52.5076))
-	t.ok(isRoughlyEqual(.01, s.coordinates.longitude, 13.2775))
+	t.ok(isRoughlyEqual(.001, s.coordinates.latitude, 52.5073))
+	t.ok(isRoughlyEqual(.001, s.coordinates.longitude, 13.2792))
 })
 
-test('stations.json – all', (t) => {
+test('stations.json – all', (t) => {
 	for (let id in stations) {
 		const s = stations[id]
 		t.equal(s.id, id, id + ' has an invalid id')

@@ -1,22 +1,30 @@
 {
-	"name":         "ecolines",
-	"description":  "JavaScript client for the Ecolines API.",
-	"version":      "0.2.0",
-	"main":         "stations.json",
-	"files":        ["stations.json"],
-	"keywords":     ["bus", "coach", "ecolines", "europe", "api"],
-	"author":       "Jannis R <mail@jannisr.de>",
-	"homepage":     "https://github.com/derhuerst/ecolines",
-	"repository":   "derhuerst/ecolines",
-	"bugs":         "https://github.com/derhuerst/ecolines/issues",
-	"license":      "ISC",
+	"name": "ecolines",
+	"description": "JavaScript client for the Ecolines API.",
+	"version": "0.2.0",
+	"main": "stations.json",
+	"files": [
+		"stations.json"
+	],
+	"keywords": [
+		"bus",
+		"coach",
+		"ecolines",
+		"europe",
+		"api"
+	],
+	"author": "Jannis R <mail@jannisr.de>",
+	"homepage": "https://github.com/derhuerst/ecolines",
+	"repository": "derhuerst/ecolines",
+	"bugs": "https://github.com/derhuerst/ecolines/issues",
+	"license": "ISC",
 	"engines": {
 		"node": ">=16"
 	},
 	"devDependencies": {
 		"eslint": "^8.22.0",
-		"is-roughly-equal": "^0.1.0",
 		"got": "^11.8.5",
+		"is-roughly-equal": "^0.1.0",
 		"tap-min": "^2.0.0",
 		"tape": "^5.5.3"
 	},
@@ -24,6 +32,6 @@
 		"lint": "eslint .",
 		"build": "node build/index.js",
 		"test": "node test.js | tap-min",
-		"prepublish": "npm run lint && npm run build && npm test"
+		"prepublishOnly": "npm run lint && npm run build && npm test"
 	}
 }
