@@ -2,8 +2,9 @@
 
 const got = require('got')
 
-const routes = () =>
-	got('https://api.ecolines.net/v1/directions.json')
-	.then((res) => JSON.parse(res.body))
+const routes = async () => {
+	const res = await got('https://api.ecolines.net/v1/directions.json')
+	return JSON.parse(res.body)
+}
 
 module.exports = routes

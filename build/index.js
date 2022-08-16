@@ -1,29 +1,22 @@
 'use strict'
 
-const fs = require('fs')
+const {writeFile} = require('fs/promises')
 const path = require('path')
 
 const fetchRoutes = require('./fetch-routes')
 const fetchCountries = require('./fetch-countries')
 
-const showError = (err) => {
-	console.error(err)
-	process.exit(1)
+const writeJSON = async (file, data) => {
+	await writeFile(
+		path.join(__dirname, '..', file),
+		JSON.stringify(data),
+	)
 }
-
-const writeJSON = (file, data) =>
-	new Promise((yay, nay) => {
-		const dest = path.join(__dirname, '..', file)
-		fs.writeFile(dest, JSON.stringify(data), (err) => {
-			if (err) nay(err)
-			else yay()
-		})
-	})
 
 const stations = {}
 
-fetchRoutes()
-.then((connections) => {
+;(async () => {
+	const connections = await fetchRoutes()
 	for (let c of connections) {
 		for (let s of [c.origin, c.destination]) {
 			if (!stations[s.id]) stations[s.id] = {
@@ -38,9 +31,7 @@ fetchRoutes()
 		}
 	}
 
-	return fetchCountries()
-})
-.then((countries) => {
+	const countries = await fetchCountries()
 	for (let country of countries) {
 		if (!country.iso) {
 			console.error(country.title + ` doesn't have an ISO code`)
@@ -56,6 +47,10 @@ fetchRoutes()
 			stations[station.id].country = country.iso
 		}
 	}
+
+	await writeJSON('stations.json', stations)
+})()
+.catch((err) => {
+	console.error(err)
+	process.exit(1)
 })
-.then(() => writeJSON('stations.json', stations))
-.catch(showError)
